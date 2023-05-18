@@ -3,6 +3,8 @@ import { FaAngular } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
 import { SiMui, SiTailwindcss } from "react-icons/si";
 import { ElementPalette, slatePalette } from "./palettes";
+import idPhoto from '../../public/principal_quadrada.jpg';
+import { StaticImageData } from "next/image";
 
 export interface LanguageString {
     ptBR: string;
@@ -41,7 +43,7 @@ export interface Work {
 
 export interface OpeningSection {
     welcomeText: LanguageString;
-    identityPhotoSrc: string;
+    identityPhotoSrc: StaticImageData;
     introductoryTexts: LanguageString[];
 }
 
@@ -61,7 +63,7 @@ export const openingSection: OpeningSection = {
         ptBR: "Oi!",
         enUS: "Hi!"
     },
-    identityPhotoSrc: "/../public/principal_quadrada.jpg",
+    identityPhotoSrc: idPhoto,
     introductoryTexts: [
         {
             ptBR: "Seja bem-vindo ao meu portfólio.",
