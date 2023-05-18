@@ -61,7 +61,7 @@ export const openingSection: OpeningSection = {
         ptBR: "Oi!",
         enUS: "Hi!"
     },
-    identityPhotoSrc: "https://64.media.tumblr.com/8c6af43b89d22e2236dc5d5c263bdb9b/tumblr_pqgaz9Y2sB1u1ycqw_400.jpg",
+    identityPhotoSrc: "/../public/principal_quadrada.jpg",
     introductoryTexts: [
         {
             ptBR: "Seja bem-vindo ao meu portfólio.",

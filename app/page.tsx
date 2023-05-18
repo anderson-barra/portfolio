@@ -6,6 +6,7 @@ import WorkHighlight from "./portfolio/elements/work-highlight";
 import { concludingSection, openingSection, portifolio } from "./portfolio/contents";
 import { useState } from "react";
 import { LanguageContext } from "./LanguageContext";
+import Image from 'next/image';
 
 export default function SimpleSlider() {
   const [language, setLanguage] = useState('pt-BR');
@@ -24,9 +25,9 @@ export default function SimpleSlider() {
           <p className="text-center text-4xl">{ language === "pt-BR" ? openingSection.welcomeText.ptBR : openingSection.welcomeText.enUS }</p>
 
           <div className="w-1/2 sm:w-1/4 relative flex justify-center overflow-visible">
-            <img className="rounded-full w-full" src={ openingSection.identityPhotoSrc } alt="" />
+            <Image className="rounded-full w-full" src={ openingSection.identityPhotoSrc } alt="" width={300} height={300}/>
             <div className="absolute -right-16 -top-4">
-              <button onClick={switchLanguage} className="px-2 py-1 relative bg-gray-900 rounded-lg drop-shadow-2xl transition-transform ease hover:scale-105 before:content-[''] before:absolute before:bg-gray-900 before:h-[20px] before:w-[30px] before:top-[calc(100%-2px)] before:left-[1rem] before:clip-path-arrow">
+              <button onClick={switchLanguage} className="px-2 py-1 relative bg-gray-900 rounded-lg shadow-2xl transition-transform ease hover:scale-105 before:content-[''] before:absolute before:bg-gray-900 before:h-[20px] before:w-[30px] before:top-[calc(100%-2px)] before:left-[1rem] before:clip-path-arrow">
                 <span className="text-gray-200 font-bold text-xs lg:text-sm">{ language === "pt-BR" ? "Speak English?" : "Fala Português?" }</span>
               </button>
             </div>
