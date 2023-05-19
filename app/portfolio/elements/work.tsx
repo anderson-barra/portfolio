@@ -1,8 +1,11 @@
-import { ElementPalette } from "../palettes";
+import { PaletteContext } from "@/app/Contexts";
+import { useContext } from "react";
 
-export default function Work({children, palette}: {children: React.ReactNode, palette: ElementPalette}) {
+export default function Work({children, id}: {children: React.ReactNode, id: string}) {
+    const paletteContext = useContext(PaletteContext);
+
     return(
-        <div className={`min-h-screen py-16 ${palette.bg.dark}`}>
+        <div id={id} className={`min-h-screen py-16 ${paletteContext.bg.dark}`}>
 
             <div className="max-w-5xl mx-auto flex flex-col gap-4">
 

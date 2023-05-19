@@ -1,23 +1,29 @@
 'use client'
 
-import { LanguageContext } from "@/app/LanguageContext";
+import { LanguageContext, PaletteContext } from "@/app/Contexts";
 import { useContext } from "react";
 import { TechStack } from "../contents";
-import { ElementPalette } from "../palettes";
 
-export default function WorkProfile({name, description, palette, techStack}: {name: string, description: string, palette: ElementPalette, techStack: TechStack}) {
+export default function WorkProfile({name, releaseDate, description, techStack}: {name: string, releaseDate: string, description: string, techStack: TechStack}) {
     const languageContext = useContext(LanguageContext);
+    const paletteContext = useContext(PaletteContext);
 
     return(
-        <div id={ name } className={`rounded-lg p-3 flex flex-col gap-4 ${palette.bg.lightest}`}>
+        <div className={`rounded-lg p-3 flex flex-col gap-4 ${paletteContext.bg.lightest}`}>
             
-            <a href={`#${ name }`}>
-                <p className="flex text-4xl hover:underline">{ name }</p>
-            </a>
+            <div className="flex flex-col gap-1">
+
+                <a href={`#${ name }`}>
+                    <p className="flex text-4xl hover:underline">{ name }</p>
+                </a>
+
+                <span className="text-sm italic">{ releaseDate }</span>
+
+            </div>
 
             <div className="flex flex-col lg:flex-row gap-2">
 
-                <div className={`shadow-md basis-1/5 p-2 rounded-lg ${palette.bg.light} flex flex-col gap-2`}>
+                <div className={`shadow-md basis-1/5 p-2 rounded-lg ${paletteContext.bg.light} flex flex-col gap-2`}>
 
                 {
                     (techStack.frontend.length > 0) && 
@@ -32,7 +38,7 @@ export default function WorkProfile({name, description, palette, techStack}: {na
                                         <p>{ tech.name }</p>
                                         <p className="text-xs">{ languageContext === "pt-BR" ? tech.type.ptBR : tech.type.enUS }</p>
                                     </div>
-                                    <tech.icon size={25} color={palette.icon.dark}/>
+                                    <tech.icon size={25} color={paletteContext.icon.dark}/>
                                 </div>
                             )
                         }
@@ -53,7 +59,7 @@ export default function WorkProfile({name, description, palette, techStack}: {na
                                         <p>{ tech.name }</p>
                                         <p className="text-xs">{ languageContext === "pt-BR" ? tech.type.ptBR : tech.type.enUS }</p>
                                     </div>
-                                    <tech.icon size={25} color={palette.icon.dark}/>
+                                    <tech.icon size={25} color={paletteContext.icon.dark}/>
                                 </div>
                             )
                         }

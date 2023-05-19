@@ -24,6 +24,7 @@ export interface TechStack {
 
 export interface WorkProfile {
     name: LanguageString;
+    releaseDate: string;
     description: LanguageString;
     techStack: TechStack;
 }
@@ -117,9 +118,10 @@ export const portifolio: Work[] = [
                 ptBR: "Gesfér",
                 enUS: "Gesfér",
             },
+            releaseDate: "2022",
             description: {
                 ptBR: "Gesfér é um site de gestão de férias criado para ser utilizado por servidores da área de administração de órgãos públicos. O objetivo do site é permitir o controle dos períodos de férias dos servidores de maneira eficiente e organizada. O sistema permite cadastrar usuários com diferentes níveis de acesso, como o Administrador, Cadastrante e Consultor, com permissões específicas para buscar, listar, remover, criar e editar funcionários e seus períodos de férias.",
-                enUS: "Gesfér is a vacation management website created to be used by servers in the administration area of public bodies. The purpose of the site is to allow the control of the vacation periods of the servers in an efficient and organized way. The system allows registering users with different access levels, such as Administrator, Registrant and Consultant, with specific permissions to search, list, remove, create and edit employees and their vacation periods.",
+                enUS: "Gesfér is a vacation management website created to be used by employees in the administration area of public bodies. The purpose of the site is to allow the control of the vacation periods of the employees in an efficient and organized way. The system allows registering users with different access levels, such as Administrator, Registrant and Consultant, with specific permissions to search, list, remove, create and edit employees and their vacation periods.",
             },
             techStack: {
                 frontend: [

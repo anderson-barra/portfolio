@@ -5,7 +5,7 @@ import Work from "./portfolio/elements/work";
 import WorkHighlight from "./portfolio/elements/work-highlight";
 import { concludingSection, openingSection, portifolio } from "./portfolio/contents";
 import { useState } from "react";
-import { LanguageContext } from "./LanguageContext";
+import { LanguageContext, PaletteContext } from "./Contexts";
 import Image from 'next/image';
 
 export default function SimpleSlider() {
@@ -45,29 +45,32 @@ export default function SimpleSlider() {
 
         {
           portifolio.map(work => 
-            <Work key={work.profile.name.ptBR} palette={work.palette}>
-              
-              <WorkProfile
-                name={language === "pt-BR" ? work.profile.name.ptBR : work.profile.name.enUS}
-                description={language === "pt-BR" ? work.profile.description.ptBR : work.profile.description.enUS}
-                techStack={work.profile.techStack}
-                palette={work.palette}
-              ></WorkProfile>
+            <PaletteContext.Provider value={work.palette} key={work.profile.name.ptBR}>
 
-              {
-                work.highlights.map(highlight => 
-                  <WorkHighlight
-                    key={highlight.title.ptBR}
-                    title={language === "pt-BR" ? highlight.title.ptBR : highlight.title.enUS}
-                    description={language === "pt-BR" ? highlight.description.ptBR : highlight.description.enUS}
-                    palette={work.palette}
-                    Icon={highlight.icon}
-                    imgSrc={highlight.imgSrc}
-                  ></WorkHighlight> 
-                )
-              }
+              <Work id={ work.profile.name.ptBR }>
+                
+                <WorkProfile
+                  name={language === "pt-BR" ? work.profile.name.ptBR : work.profile.name.enUS}
+                  releaseDate={work.profile.releaseDate}
+                  description={language === "pt-BR" ? work.profile.description.ptBR : work.profile.description.enUS}
+                  techStack={work.profile.techStack}
+                ></WorkProfile>
 
-            </Work>
+                {
+                  work.highlights.map(highlight => 
+                    <WorkHighlight
+                      key={highlight.title.ptBR}
+                      title={language === "pt-BR" ? highlight.title.ptBR : highlight.title.enUS}
+                      description={language === "pt-BR" ? highlight.description.ptBR : highlight.description.enUS}
+                      Icon={highlight.icon}
+                      imgSrc={highlight.imgSrc}
+                    ></WorkHighlight> 
+                  )
+                }
+
+              </Work>
+
+            </PaletteContext.Provider>
           )
         }
 
