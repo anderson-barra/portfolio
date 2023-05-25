@@ -7,7 +7,7 @@ export default function Work({children, id}: {children: React.ReactNode, id: str
     return(
         <div id={id} className={`min-h-screen py-16 ${paletteContext.bg.dark}`}>
 
-            <div className="max-w-5xl mx-auto flex flex-col gap-4">
+            <div className="flex flex-col gap-4">
 
                 { children }
 

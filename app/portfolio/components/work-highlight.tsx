@@ -6,7 +6,7 @@ export default function WorkHighlight({title, description, Icon, imgSrc}: {title
     const paletteContext = useContext(PaletteContext);
 
     return(
-        <div className={`p-3 lg:p-6 ${paletteContext.border.light} border-l-0 lg:border-l-2 flex flex-col lg:flex-row gap-4`}>
+        <div className={`max-w-5xl mx-auto p-3 lg:p-6 ${paletteContext.border.light} border-l-0 lg:border-l-2 flex flex-col lg:flex-row gap-4`}>
 
             <div className={`order-1 basis-1/2 pt-3 ${paletteContext.border.light} border-t lg:border-t-0 flex flex-col gap-2`}>
 

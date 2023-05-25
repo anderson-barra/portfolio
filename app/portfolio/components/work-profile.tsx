@@ -9,7 +9,7 @@ export default function WorkProfile({name, releaseDate, description, techStack}:
     const paletteContext = useContext(PaletteContext);
 
     return(
-        <div className={`rounded-lg p-3 flex flex-col gap-4 ${paletteContext.bg.lightest}`}>
+        <div className={`max-w-5xl mx-auto rounded-lg p-3 flex flex-col gap-4 ${paletteContext.bg.lightest}`}>
             
             <div className="flex flex-col gap-1">
 
