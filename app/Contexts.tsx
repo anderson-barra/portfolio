@@ -1,5 +1,5 @@
 import { Context, createContext } from "react";
-import { ElementPalette, slatePalette } from "./portfolio/palettes";
+import { ElementPalette, slatePalette } from "./features/portfolio/palettes";
 
 export const LanguageContext: Context<string> = createContext('pt-BR');
 

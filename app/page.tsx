@@ -1,13 +1,13 @@
 'use client'
 
-import WorkProfile from "./portfolio/components/work-profile";
-import Work from "./portfolio/components/work";
-import WorkHighlight from "./portfolio/components/work-highlight";
-import { concludingSection, openingSection, portifolio } from "./portfolio/contents";
+import WorkProfile from "./features/portfolio/components/work-profile";
+import Work from "./features/portfolio/components/work";
+import WorkHighlight from "./features/portfolio/components/work-highlight";
+import WorkCarousel from "./features/portfolio/components/work-carousel";
+import { concludingSection, openingSection, portifolio } from "./features/portfolio/contents";
 import { useState } from "react";
 import { LanguageContext, PaletteContext } from "./Contexts";
 import Image from 'next/image';
-import WorkCarousel from "./portfolio/components/work-carousel";
 
 export default function SimpleSlider() {
   const [language, setLanguage] = useState('pt-BR');
@@ -69,7 +69,7 @@ export default function SimpleSlider() {
                   )
                 } */}
 
-                <WorkCarousel></WorkCarousel>
+                <WorkCarousel imagesSrc={work.gallery}></WorkCarousel>
 
               </Work>
 

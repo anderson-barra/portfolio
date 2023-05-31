@@ -2,8 +2,8 @@ import { AiFillGithub, AiFillLinkedin, AiOutlineSafety } from "react-icons/ai";
 import { FaAngular } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
 import { SiMui, SiTailwindcss } from "react-icons/si";
-import { ElementPalette, slatePalette } from "./palettes";
-import idPhoto from '../../public/principal_quadrada.jpg';
+import { ElementPalette, limePalette, slatePalette } from "./palettes";
+import idPhoto from '../../../public/principal_quadrada.jpg';
 import { StaticImageData } from "next/image";
 
 export interface LanguageString {
@@ -40,6 +40,7 @@ export interface Work {
     palette: ElementPalette;
     profile: WorkProfile;
     highlights: WorkHighlight[];
+    gallery: string[];
 }
 
 export interface OpeningSection {
@@ -166,6 +167,11 @@ export const portifolio: Work[] = [
                 icon: AiOutlineSafety,
                 imgSrc: "https://i.pinimg.com/originals/71/9e/80/719e80760999b4c355a723224120eb07.png",
             }
-        ]
+        ],
+        gallery: [
+            "https://wallpapercave.com/wp/wp5405231.jpg",
+            "https://i.pinimg.com/originals/11/1a/03/111a03133d14214539c96e0f657dff1a.png",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLuO2DuHm-RyZwdEoQ8zNMESA3y029UZKvFQ&usqp=CAU",
+        ],
     },
 ];
