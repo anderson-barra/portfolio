@@ -23,7 +23,7 @@ export default function WorkCarousel({imagesSrc}: {imagesSrc: string[]}) {
     ? null
     : (
       <div className="flex items-center justify-start inset-y-0 left-0 lg:right-[50%] absolute">
-        <div onClick={() => swiper.slidePrev()} className={`-m-2 basis-1/2 rounded-r-lg h-full z-10 flex items-center justify-end cursor-pointer transition-colors hover:${paletteContext.bg.lightest[25]}`}>
+        <div onClick={() => swiper.slidePrev()} className="-m-2 basis-1/2 rounded-r-lg h-full z-10 flex items-center justify-end cursor-pointer transition-colors hover:bg-white/25">
           <BsChevronLeft size={breakpoint === 'xs' || breakpoint === 'sm' || breakpoint === 'md' ? 30 : 50} color={paletteContext.icon.lightest}></BsChevronLeft>
         </div>
       </div>
@@ -37,7 +37,7 @@ export default function WorkCarousel({imagesSrc}: {imagesSrc: string[]}) {
     ? null
     : (
       <div className="flex items-center justify-end inset-y-0 lg:left-[50%] right-0 absolute">
-        <div onClick={() => swiper.slideNext()} className={`-m-2 basis-1/2 rounded-l-lg h-full z-10 flex items-center justify-start cursor-pointer transition-colors hover:${paletteContext.bg.lightest[25]}`}>
+        <div onClick={() => swiper.slideNext()} className="-m-2 basis-1/2 rounded-l-lg h-full z-10 flex items-center justify-start cursor-pointer transition-colors hover:bg-white/25">
           <BsChevronRight size={breakpoint === 'xs' || breakpoint === 'sm' || breakpoint === 'md' ? 30 : 50} color={paletteContext.icon.lightest}></BsChevronRight>
         </div>
       </div>

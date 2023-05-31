@@ -11,14 +11,8 @@ export interface Palette {
   dark: string;
 }
 
-export interface PaletteOpacity {
-  lightest: OpacityVariant;
-  light: OpacityVariant;
-  dark: OpacityVariant;
-}
-
 export interface ElementPalette {
-  bg: PaletteOpacity;
+  bg: Palette;
   text: Palette;
   border: Palette;
   icon: Palette;
@@ -26,24 +20,9 @@ export interface ElementPalette {
 
 export const slatePalette: ElementPalette = {
     bg: {
-      lightest: {
-        25: 'bg-slate-200/25',
-        50: 'bg-slate-200/50',
-        75: 'bg-slate-200/75',
-        100: 'bg-slate-200/100'
-      },
-      light: {
-        25: 'bg-slate-300/25',
-        50: 'bg-slate-300/50',
-        75: 'bg-slate-300/75',
-        100: 'bg-slate-300/100'
-      },
-      dark: {
-        25: 'bg-slate-950/25',
-        50: 'bg-slate-950/50',
-        75: 'bg-slate-950/75',
-        100: 'bg-slate-950/100'
-      },
+      lightest: 'bg-slate-200',
+      light: 'bg-slate-300',
+      dark: 'bg-slate-950',
     },
     text: {
       lightest: 'text-slate-200',
@@ -64,24 +43,9 @@ export const slatePalette: ElementPalette = {
 
 export const limePalette: ElementPalette = {
   bg: {
-    lightest: {
-      25: 'bg-lime-200/25',
-      50: 'bg-lime-200/50',
-      75: 'bg-lime-200/75',
-      100: 'bg-lime-200/100'
-    },
-    light: {
-      25: 'bg-lime-300/25',
-      50: 'bg-lime-300/50',
-      75: 'bg-lime-300/75',
-      100: 'bg-lime-300/100'
-    },
-    dark: {
-      25: 'bg-lime-950/25',
-      50: 'bg-lime-950/50',
-      75: 'bg-lime-950/75',
-      100: 'bg-lime-950/100'
-    },
+    lightest: 'bg-lime-200',
+    light: 'bg-lime-300',
+    dark: 'bg-lime-950',
   },
   text: {
     lightest: 'text-lime-200',

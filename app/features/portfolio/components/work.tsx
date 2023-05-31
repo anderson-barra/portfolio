@@ -5,7 +5,7 @@ export default function Work({children, id}: {children: React.ReactNode, id: str
     const paletteContext = useContext(PaletteContext);
 
     return(
-        <div id={id} className={`min-h-screen py-16 ${paletteContext.bg.dark[100]}`}>
+        <div id={id} className={`min-h-screen py-16 ${paletteContext.bg.dark}`}>
 
             <div className="flex flex-col gap-4">
 
