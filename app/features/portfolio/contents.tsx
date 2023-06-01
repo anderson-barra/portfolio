@@ -3,8 +3,18 @@ import { FaAngular } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
 import { SiMui, SiTailwindcss } from "react-icons/si";
 import { ElementPalette, limePalette, slatePalette } from "./palettes";
-import idPhoto from '../../../public/principal_quadrada.jpg';
 import { StaticImageData } from "next/image";
+
+// images
+import profilePhoto from '../../../public/images/profile_photo.jpg';
+import gesferImg1 from '../../../public/images/gesfer/gesfer_login.png';
+import gesferImg2 from '../../../public/images/gesfer/gesfer_home.png';
+import gesferImg3 from '../../../public/images/gesfer/gesfer_funcionarios.png';
+import gesferImg4 from '../../../public/images/gesfer/gesfer_funcionarios_filtroModal.png';
+import gesferImg5 from '../../../public/images/gesfer/gesfer_funcionarios_actionsMenu.png';
+import gesferImg6 from '../../../public/images/gesfer/gesfer_funcionarios_exercicio.png';
+import gesferImg7 from '../../../public/images/gesfer/gesfer_funcionarios_exercicio_profileMenu.png';
+import gesferImg8 from '../../../public/images/gesfer/gesfer_usuarios.png';
 
 export interface LanguageString {
     ptBR: string;
@@ -40,7 +50,7 @@ export interface Work {
     palette: ElementPalette;
     profile: WorkProfile;
     highlights: WorkHighlight[];
-    gallery: string[];
+    gallery: StaticImageData[];
 }
 
 export interface OpeningSection {
@@ -65,7 +75,7 @@ export const openingSection: OpeningSection = {
         ptBR: "Oi!",
         enUS: "Hi!"
     },
-    identityPhotoSrc: idPhoto,
+    identityPhotoSrc: profilePhoto,
     introductoryTexts: [
         {
             ptBR: "Seja bem-vindo ao meu portfólio.",
@@ -168,10 +178,6 @@ export const portifolio: Work[] = [
                 imgSrc: "https://i.pinimg.com/originals/71/9e/80/719e80760999b4c355a723224120eb07.png",
             }
         ],
-        gallery: [
-            "https://wallpapercave.com/wp/wp5405231.jpg",
-            "https://i.pinimg.com/originals/11/1a/03/111a03133d14214539c96e0f657dff1a.png",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLuO2DuHm-RyZwdEoQ8zNMESA3y029UZKvFQ&usqp=CAU",
-        ],
+        gallery: [gesferImg1, gesferImg2, gesferImg3, gesferImg4, gesferImg5, gesferImg6, gesferImg7, gesferImg8],
     },
 ];
