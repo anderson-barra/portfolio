@@ -50,12 +50,7 @@ export default function SimpleSlider() {
 
               <Work id={ work.profile.name.ptBR }>
                 
-                <WorkProfile
-                  name={language === "pt-BR" ? work.profile.name.ptBR : work.profile.name.enUS}
-                  releaseDate={work.profile.releaseDate}
-                  description={language === "pt-BR" ? work.profile.description.ptBR : work.profile.description.enUS}
-                  techStack={work.profile.techStack}
-                ></WorkProfile>
+                <WorkProfile profile={work.profile}></WorkProfile>
 
                 {/* {
                   work.highlights.map(highlight => 

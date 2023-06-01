@@ -1,9 +1,13 @@
+import { ElementPalette, limePalette, slatePalette } from "./palettes";
+import { StaticImageData } from "next/image";
+
+// Icons
 import { AiFillGithub, AiFillLinkedin, AiOutlineSafety } from "react-icons/ai";
 import { FaAngular } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
 import { SiMui, SiTailwindcss } from "react-icons/si";
-import { ElementPalette, limePalette, slatePalette } from "./palettes";
-import { StaticImageData } from "next/image";
+import { RiGitRepositoryFill } from "react-icons/ri";
+
 
 // images
 import profilePhoto from '../../../public/images/profile_photo.jpg';
@@ -32,9 +36,16 @@ export interface TechStack {
     backend: Technology[];
 }
 
+export interface ProfileLink {
+    icon: IconType;
+    text: LanguageString;
+    href: string;
+}
+
 export interface WorkProfile {
     name: LanguageString;
     releaseDate: string;
+    links: ProfileLink[];
     description: LanguageString;
     techStack: TechStack;
 }
@@ -134,6 +145,16 @@ export const portifolio: Work[] = [
                 ptBR: "Gesfér é um site de gestão de férias criado para ser utilizado por servidores da área de administração de órgãos públicos. O objetivo do site é permitir o controle dos períodos de férias dos servidores de maneira eficiente e organizada. O sistema permite cadastrar usuários com diferentes níveis de acesso, como o Administrador, Cadastrante e Consultor, com permissões específicas para buscar, listar, remover, criar e editar funcionários e seus períodos de férias.",
                 enUS: "Gesfér is a vacation management website created to be used by employees in the administration area of public bodies. The purpose of the site is to allow the control of the vacation periods of the employees in an efficient and organized way. The system allows registering users with different access levels, such as Administrator, Registrant and Consultant, with specific permissions to search, list, remove, create and edit employees and their vacation periods.",
             },
+            links: [
+                {
+                    icon: RiGitRepositoryFill,
+                    text: {
+                        ptBR: "Repositório",
+                        enUS: "Repository"
+                    },
+                    href: "https://github.com/AllbertSantana/gesfer"
+                }
+            ],
             techStack: {
                 frontend: [
                   {

@@ -2,9 +2,9 @@
 
 import { LanguageContext, PaletteContext } from "@/app/Contexts";
 import { useContext } from "react";
-import { TechStack } from "../contents";
+import { TechStack, WorkProfile } from "../contents";
 
-export default function WorkProfile({name, releaseDate, description, techStack}: {name: string, releaseDate: string, description: string, techStack: TechStack}) {
+export default function WorkProfile({profile}: {profile: WorkProfile}) {
     const languageContext = useContext(LanguageContext);
     const paletteContext = useContext(PaletteContext);
 
@@ -13,69 +13,129 @@ export default function WorkProfile({name, releaseDate, description, techStack}:
             
             <div className="flex flex-col gap-1">
 
-                <a href={`#${ name }`}>
-                    <p className="flex text-4xl hover:underline">{ name }</p>
+                <a href={`#${ profile.name }`}>
+                    <p className="flex text-4xl hover:underline">{ languageContext === "pt-BR" ? profile.name.ptBR : profile.name.enUS }</p>
                 </a>
 
-                <span className="text-sm italic">{ releaseDate }</span>
+                <span className="text-sm italic">{ profile.releaseDate }</span>
 
             </div>
 
             <div className="flex flex-col lg:flex-row gap-2">
 
-                <div className={`shadow-md basis-1/5 p-2 rounded-lg ${paletteContext.bg.light} flex flex-col gap-2`}>
+                <div className={`shadow-md basis-1/5 p-2 rounded-lg ${paletteContext.bg.light} flex flex-col gap-2 items-center`}>
 
-                {
-                    (techStack.frontend.length > 0) && 
-                    <div className="flex flex-col">
-                        
-                        <p className="font-semibold">Front-end</p>
+                    {
+                        profile.techStack.frontend.length === 0 && profile.techStack.backend.length === 0 && (
+                            <span className="text-sm">
+                                { languageContext === "pt-BR" ? "Nenhuma contribuição ao projeto" : "No contribution to the project" }
+                            </span>
+                        )
+                    }
 
-                        {
-                            techStack.frontend.map(tech => 
-                                <div key={ tech.name } className="flex flex-row items-center gap-1">
-                                    <div className="grow flex flex-col">
-                                        <p>{ tech.name }</p>
-                                        <p className="text-xs">{ languageContext === "pt-BR" ? tech.type.ptBR : tech.type.enUS }</p>
+                    {
+                        profile.techStack.frontend.length > 0 && profile.techStack.backend.length === 0 && (
+                            <span className="text-sm">
+                                { languageContext === "pt-BR" ? "Contribuição somente ao frontend" : "Frontend only contribution" }
+                            </span>
+                        )
+                    }
+
+                    {
+                        profile.techStack.frontend.length === 0 && profile.techStack.backend.length > 0 && (
+                            <span className="text-sm">
+                                { languageContext === "pt-BR" ? "Contribuição somente ao backend" : "Backend only contribution" }
+                            </span>
+                        )
+                    }
+
+                    {
+                        profile.techStack.frontend.length > 0 && profile.techStack.backend.length > 0 && (
+                            <span className="text-sm">
+                                { languageContext === "pt-BR" ? "Contribuição ao frontend e backend" : "Contribution to frontend and backend" }
+                            </span>
+                        )
+                    }
+                    
+
+                    {
+                        (profile.techStack.frontend.length > 0) && 
+                        <div className="flex flex-col w-full">
+                            
+                            <p className="font-semibold">Front-end</p>
+
+                            {
+                                profile.techStack.frontend.map(tech => 
+                                    <div key={ tech.name } className="flex flex-row items-center gap-1">
+                                        <div className="grow flex flex-col">
+                                            <p>{ tech.name }</p>
+                                            <p className="text-xs">{ languageContext === "pt-BR" ? tech.type.ptBR : tech.type.enUS }</p>
+                                        </div>
+                                        <tech.icon size={25} color={paletteContext.icon.dark}/>
                                     </div>
-                                    <tech.icon size={25} color={paletteContext.icon.dark}/>
-                                </div>
-                            )
-                        }
+                                )
+                            }
 
-                    </div>
-                }
+                        </div>
+                    }
 
-                {
-                    (techStack.backend.length > 0) && 
-                    <div className="flex flex-col">
-                        
-                        <p className="font-semibold">Back-end</p>
+                    {
+                        (profile.techStack.backend.length > 0) && 
+                        <div className="flex flex-col w-full">
+                            
+                            <p className="font-semibold">Back-end</p>
 
-                        {
-                            techStack.backend.map(tech => 
-                                <div key={ tech.name } className="flex flex-row items-center gap-1">
-                                    <div className="grow flex flex-col">
-                                        <p>{ tech.name }</p>
-                                        <p className="text-xs">{ languageContext === "pt-BR" ? tech.type.ptBR : tech.type.enUS }</p>
+                            {
+                                profile.techStack.backend.map(tech => 
+                                    <div key={ tech.name } className="flex flex-row items-center gap-1">
+                                        <div className="grow flex flex-col">
+                                            <p>{ tech.name }</p>
+                                            <p className="text-xs">{ languageContext === "pt-BR" ? tech.type.ptBR : tech.type.enUS }</p>
+                                        </div>
+                                        <tech.icon size={25} color={paletteContext.icon.dark}/>
                                     </div>
-                                    <tech.icon size={25} color={paletteContext.icon.dark}/>
-                                </div>
-                            )
-                        }
+                                )
+                            }
 
-                    </div>
-                }
+                        </div>
+                    }
 
                 </div>
 
-              <div className="basis-4/5 p-2 flex flex-col">
+                <div className="basis-4/5 p-2 flex flex-col gap-2">
 
-                <p className="font-semibold">{ languageContext === "pt-BR" ? "Descrição" : "Description" }</p>
-                
-                <p className="basis-4/5">{ description }</p>
+                    <div className="flex flex-col">
 
-              </div>
+                        <p className="font-semibold">{ languageContext === "pt-BR" ? "Descrição" : "Description" }</p>
+                        
+                        <p className="basis-4/5">{ languageContext === "pt-BR" ? profile.description.ptBR : profile.description.enUS }</p>
+
+                    </div>
+
+                    <div className="flex flex-col">
+
+                        <p className="font-semibold">Links</p>
+
+                        <div className="flex flex-col sm:flex-row">
+
+                            {
+                                profile.links.map((link) => (
+                                    <a key={ link.text.ptBR } className={`shadow-md py-2 px-3 rounded-lg bg-white hover:bg-white/25`} href={ link.href } target="_blank">
+                                        <div className="flex flex-row items-center justify-center gap-2">
+                                            <link.icon size={25} color={paletteContext.icon.dark}/>
+                                            <span>
+                                                { languageContext === "pt-BR" ? link.text.ptBR : link.text.enUS }
+                                            </span>
+                                        </div>
+                                    </a>
+                                ))
+                            }
+                            
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
