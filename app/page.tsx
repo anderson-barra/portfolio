@@ -5,6 +5,7 @@ import { ThemeContext } from "./Contexts";
 import { darkTheme, lightTheme } from "./themes";
 import LandingSection from "./sections/landing";
 import ProfileSection from "./sections/profile";
+import ProjectsSection from "./sections/projects";
 
 export default function SimpleSlider() {
   const [theme, setTheme] = useState(lightTheme);
@@ -15,9 +16,10 @@ export default function SimpleSlider() {
 
   return (
     <ThemeContext.Provider value={theme}>
-      <div className={theme.bg.ground}>
+      <div className={`${theme.bg.ground}`}>
         <LandingSection themeHandler={switchTheme}></LandingSection>
         <ProfileSection></ProfileSection>
+        <ProjectsSection></ProjectsSection>
       </div>
     </ThemeContext.Provider>
   );

@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { ThemeContext } from "../Contexts";
-import { Theme } from "../themes";
 
 // icons
 import { MdDarkMode } from "react-icons/md";
@@ -14,13 +13,13 @@ export default function LandingSection({themeHandler}: {themeHandler: Function})
 
         <div className="basis-1/2 flex flex-row justify-between">
 
-            <div className='flex flex-row justify-start gap-5'>
+            <div className='flex flex-row justify-start items-start gap-5'>
 
-                <span className={`${theme.text.main} text-xl`}>Sobre</span>
+                <a className={`${theme.text.main} text-xl transition hover:opacity-50`} href='#perfil'>Perfil</a>
                 
-                <span className={`${theme.text.main} text-xl`}>Projetos</span>
+                <a className={`${theme.text.main} text-xl transition hover:opacity-50`} href='#projetos'>Projetos</a>
 
-                <span className={`${theme.text.main} text-xl`}>Contato</span>
+                <a className={`${theme.text.main} text-xl transition hover:opacity-50`} href='#contato'>Contato</a>
 
             </div>
 

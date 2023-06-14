@@ -34,7 +34,7 @@ export default function ProfileSection() {
     const theme = useContext(ThemeContext);
 
     return (
-      <div className="p-5 sm:p-10 min-h-screen flex flex-col gap-10 lg:flex-row lg:gap-0">
+      <div id='perfil' className="p-5 sm:p-10 min-h-screen flex flex-col gap-10 lg:flex-row lg:gap-0">
 
         <div className="basis-1/2 flex flex-col items-center gap-10">
 

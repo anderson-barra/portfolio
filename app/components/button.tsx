@@ -8,7 +8,7 @@ export default function Button({variant, Icon, label}: {variant: string | undefi
     switch (variant) {
         case "flat":
             return (
-                <button className={`py-2 px-4 ${theme.bg.contrast} transition rounded-lg flex flex-row justify-center items-center gap-2 hover:scale-105 hover:shadow-2xl`}>
+                <button className={`py-2 px-4 ${theme.bg.contrast} transition rounded-lg flex flex-row justify-center items-center gap-2 hover:-translate-y-1 hover:shadow-2xl`}>
         
                     <Icon size={25} color={theme.icon.contrast}/>
         
@@ -18,7 +18,7 @@ export default function Button({variant, Icon, label}: {variant: string | undefi
             );
         case "raised":
             return (
-                <button className={`py-2 px-4 ${theme.bg.contrast} transition shadow-xl rounded-lg flex flex-row justify-center items-center gap-2 hover:scale-105 hover:shadow-2xl`}>
+                <button className={`py-2 px-4 ${theme.bg.contrast} transition shadow-xl rounded-lg flex flex-row justify-center items-center gap-2 hover:-translate-y-1 hover:shadow-2xl`}>
         
                     <Icon size={25} color={theme.icon.contrast}/>
         
