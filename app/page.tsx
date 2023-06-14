@@ -1,18 +1,24 @@
 'use client'
 
 import { useState } from "react";
-import { LanguageContext } from "./Contexts";
+import { ThemeContext } from "./Contexts";
+import { darkTheme, lightTheme } from "./themes";
+import LandingSection from "./sections/landing";
+import ProfileSection from "./sections/profile";
 
 export default function SimpleSlider() {
-  const [language, setLanguage] = useState('pt-BR');
+  const [theme, setTheme] = useState(lightTheme);
     
-  function switchLanguage() {
-    setLanguage(language === 'pt-BR' ? 'en-US' : 'pt-BR');
+  function switchTheme(): void {
+    setTheme(theme.mode === "light" ? darkTheme : lightTheme);
   }
 
   return (
-    <LanguageContext.Provider value={language}>
-
-    </LanguageContext.Provider>
+    <ThemeContext.Provider value={theme}>
+      <div className={theme.bg.ground}>
+        <LandingSection themeHandler={switchTheme}></LandingSection>
+        <ProfileSection></ProfileSection>
+      </div>
+    </ThemeContext.Provider>
   );
 }

@@ -1,6 +1,4 @@
 import { Context, createContext } from "react";
-import { ElementPalette, slatePalette } from "./features/portfolio/palettes";
+import { Theme, lightTheme } from "./themes";
 
-export const LanguageContext: Context<string> = createContext('pt-BR');
-
-export const PaletteContext: Context<ElementPalette> = createContext(slatePalette);
+export const ThemeContext: Context<Theme> = createContext(lightTheme);
