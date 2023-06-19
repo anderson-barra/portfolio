@@ -20,7 +20,7 @@ export function CardActions({children, xPos}: {children: React.ReactNode, xPos: 
     );
 }
 
-export default function Card({children}: {children: React.ReactNode}) {
+export default function Card({children, variant}: {children: React.ReactNode, variant: "raised" | "outlined" | "flat"}) {
     const theme = useContext(ThemeContext);
 
     let title;
@@ -54,78 +54,306 @@ export default function Card({children}: {children: React.ReactNode}) {
         }
     });
 
-    return(
-        <div className={`p-5 ${theme.bg.figure} shadow-xl rounded-lg flex flex-col gap-4`}>
-
-            {
-                !!title && !subTitle &&
-                <div className='flex flex-col'>
-
-                    <span className={`${theme.text.main} text-2xl text-start`}>{!!title && title}</span>
-
-                </div>
-                
-            }
-
-            {
-                !!title && !!subTitle &&
-                <div className='flex flex-col'>
-
-                    <span className={`${theme.text.main} text-2xl text-start`}>{!!title && title}</span>
-
-                    <span className={`${theme.text.main} text-lg text-start`}>{!!subTitle && subTitle}</span>
-
-                </div>
-                
-            }
-
-            {content}
-
-            {
-                !!actionsLeft && !actionsRight &&
-                <div className='flex flex-col sm:flex-row justify-start'>
-
-                    {Children.map(actionsLeft, child =>
-                        <div className="Row">
-                            {child}
+    switch (variant) {
+        case "raised":
+            return(
+                <div className={`p-5 ${theme.bg.figure} shadow-xl rounded-xl flex flex-col gap-4`}>
+        
+                    {
+                        !!title && !subTitle &&
+                        <div className='flex flex-col'>
+        
+                            <span className={`${theme.text.main} text-xl sm:text-2xl text-start`}>{!!title && title}</span>
+        
                         </div>
-                    )}
-
-                </div>
-            }
-
-            {
-                !!actionsRight && !actionsLeft &&
-                <div className='flex flex-col sm:flex-row justify-end'>
-
-                    {Children.map(actionsRight, child =>
-                        <div className="Row">
-                            {child}
+                        
+                    }
+        
+                    {
+                        !!title && !!subTitle &&
+                        <div className='flex flex-col'>
+        
+                            <span className={`${theme.text.main} text-xl sm:text-2xl text-start`}>{!!title && title}</span>
+        
+                            <span className={`${theme.text.main} text-base sm:text-lg text-start`}>{!!subTitle && subTitle}</span>
+        
                         </div>
-                    )}
-
-                </div>
-            }
-
-            {
-                !!actionsLeft && !!actionsRight &&
-                <div className='flex flex-col sm:flex-row justify-between gap-2'>
-
-                    {Children.map(actionsLeft, child =>
-                        <div className="flex flex-col sm:flex-row">
-                            {child}
+                        
+                    }
+        
+                    {content}
+        
+                    {
+                        !!actionsLeft.length && !actionsRight.length &&
+                        <div className='flex flex-col sm:flex-row justify-start'>
+        
+                            {Children.map(actionsLeft, child =>
+                                <div className="Row">
+                                    {child}
+                                </div>
+                            )}
+        
                         </div>
-                    )}
-
-                    {Children.map(actionsRight, child =>
-                        <div className="flex flex-col sm:flex-row">
-                            {child}
+                    }
+        
+                    {
+                        !!actionsRight.length && !actionsLeft.length &&
+                        <div className='flex flex-col sm:flex-row justify-end'>
+        
+                            {Children.map(actionsRight, child =>
+                                <div className="Row">
+                                    {child}
+                                </div>
+                            )}
+        
                         </div>
-                    )}
-
+                    }
+        
+                    {
+                        !!actionsLeft.length && !!actionsRight.length &&
+                        <div className='flex flex-col sm:flex-row justify-between gap-2'>
+        
+                            {Children.map(actionsLeft, child =>
+                                <div className="flex flex-col sm:flex-row">
+                                    {child}
+                                </div>
+                            )}
+        
+                            {Children.map(actionsRight, child =>
+                                <div className="flex flex-col sm:flex-row">
+                                    {child}
+                                </div>
+                            )}
+        
+                        </div>
+                    }
+        
                 </div>
-            }
-
-        </div>
-    );
+            );
+        case "outlined":
+            return(
+                <div className={`p-5 border-[1px] ${theme.border} rounded-xl flex flex-col gap-4`}>
+        
+                    {
+                        !!title && !subTitle &&
+                        <div className='flex flex-col'>
+        
+                            <span className={`${theme.text.main} text-xl sm:text-2xl text-start`}>{!!title && title}</span>
+        
+                        </div>
+                        
+                    }
+        
+                    {
+                        !!title && !!subTitle &&
+                        <div className='flex flex-col'>
+        
+                            <span className={`${theme.text.main} text-xl sm:text-2xl text-start`}>{!!title && title}</span>
+        
+                            <span className={`${theme.text.main} text-base sm:text-lg text-start`}>{!!subTitle && subTitle}</span>
+        
+                        </div>
+                        
+                    }
+        
+                    {content}
+        
+                    {
+                        !!actionsLeft.length && !actionsRight.length &&
+                        <div className='flex flex-col sm:flex-row justify-start'>
+        
+                            {Children.map(actionsLeft, child =>
+                                <div className="Row">
+                                    {child}
+                                </div>
+                            )}
+        
+                        </div>
+                    }
+        
+                    {
+                        !!actionsRight.length && !actionsLeft.length &&
+                        <div className='flex flex-col sm:flex-row justify-end'>
+        
+                            {Children.map(actionsRight, child =>
+                                <div className="Row">
+                                    {child}
+                                </div>
+                            )}
+        
+                        </div>
+                    }
+        
+                    {
+                        !!actionsLeft.length && !!actionsRight.length &&
+                        <div className='flex flex-col sm:flex-row justify-between gap-2'>
+        
+                            {Children.map(actionsLeft, child =>
+                                <div className="flex flex-col sm:flex-row">
+                                    {child}
+                                </div>
+                            )}
+        
+                            {Children.map(actionsRight, child =>
+                                <div className="flex flex-col sm:flex-row">
+                                    {child}
+                                </div>
+                            )}
+        
+                        </div>
+                    }
+        
+                </div>
+            );
+        case "flat":
+            return(
+                <div className={`p-5 ${theme.bg.figure} rounded-xl flex flex-col gap-4`}>
+        
+                    {
+                        !!title && !subTitle &&
+                        <div className='flex flex-col'>
+        
+                            <span className={`${theme.text.main} text-xl sm:text-2xl text-start`}>{!!title && title}</span>
+        
+                        </div>
+                        
+                    }
+        
+                    {
+                        !!title && !!subTitle &&
+                        <div className='flex flex-col'>
+        
+                            <span className={`${theme.text.main} text-xl sm:text-2xl text-start`}>{!!title && title}</span>
+        
+                            <span className={`${theme.text.main} text-base sm:text-lg text-start`}>{!!subTitle && subTitle}</span>
+        
+                        </div>
+                        
+                    }
+        
+                    {content}
+        
+                    {
+                        !!actionsLeft.length && !actionsRight.length &&
+                        <div className='flex flex-col sm:flex-row justify-start'>
+        
+                            {Children.map(actionsLeft, child =>
+                                <div className="Row">
+                                    {child}
+                                </div>
+                            )}
+        
+                        </div>
+                    }
+        
+                    {
+                        !!actionsRight.length && !actionsLeft.length &&
+                        <div className='flex flex-col sm:flex-row justify-end'>
+        
+                            {Children.map(actionsRight, child =>
+                                <div className="Row">
+                                    {child}
+                                </div>
+                            )}
+        
+                        </div>
+                    }
+        
+                    {
+                        !!actionsLeft.length && !!actionsRight.length &&
+                        <div className='flex flex-col sm:flex-row justify-between gap-2'>
+        
+                            {Children.map(actionsLeft, child =>
+                                <div className="flex flex-col sm:flex-row">
+                                    {child}
+                                </div>
+                            )}
+        
+                            {Children.map(actionsRight, child =>
+                                <div className="flex flex-col sm:flex-row">
+                                    {child}
+                                </div>
+                            )}
+        
+                        </div>
+                    }
+        
+                </div>
+            );
+        default:
+            return(
+                <div className={`p-5 ${theme.bg.figure} shadow-xl rounded-xl flex flex-col gap-4`}>
+        
+                    {
+                        !!title && !subTitle &&
+                        <div className='flex flex-col'>
+        
+                            <span className={`${theme.text.main} text-xl sm:text-2xl text-start`}>{!!title && title}</span>
+        
+                        </div>
+                        
+                    }
+        
+                    {
+                        !!title && !!subTitle &&
+                        <div className='flex flex-col'>
+        
+                            <span className={`${theme.text.main} text-xl sm:text-2xl text-start`}>{!!title && title}</span>
+        
+                            <span className={`${theme.text.main} text-base sm:text-lg text-start`}>{!!subTitle && subTitle}</span>
+        
+                        </div>
+                        
+                    }
+        
+                    {content}
+        
+                    {
+                        !!actionsLeft.length && !actionsRight.length &&
+                        <div className='flex flex-col sm:flex-row justify-start'>
+        
+                            {Children.map(actionsLeft, child =>
+                                <div className="Row">
+                                    {child}
+                                </div>
+                            )}
+        
+                        </div>
+                    }
+        
+                    {
+                        !!actionsRight.length && !actionsLeft.length &&
+                        <div className='flex flex-col sm:flex-row justify-end'>
+        
+                            {Children.map(actionsRight, child =>
+                                <div className="Row">
+                                    {child}
+                                </div>
+                            )}
+        
+                        </div>
+                    }
+        
+                    {
+                        !!actionsLeft.length && !!actionsRight.length &&
+                        <div className='flex flex-col sm:flex-row justify-between gap-2'>
+        
+                            {Children.map(actionsLeft, child =>
+                                <div className="flex flex-col sm:flex-row">
+                                    {child}
+                                </div>
+                            )}
+        
+                            {Children.map(actionsRight, child =>
+                                <div className="flex flex-col sm:flex-row">
+                                    {child}
+                                </div>
+                            )}
+        
+                        </div>
+                    }
+        
+                </div>
+            );
+    }
   }

@@ -12,7 +12,7 @@ export default function Button({variant, Icon, label}: {variant: string | undefi
         
                     <Icon size={25} color={theme.icon.contrast}/>
         
-                    <span className={`${theme.text.contrast} text-lg text-center`}>{label}</span>
+                    <span className={`${theme.text.contrast} text-base sm:text-lg text-center`}>{label}</span>
         
                 </button>
             );
@@ -22,7 +22,7 @@ export default function Button({variant, Icon, label}: {variant: string | undefi
         
                     <Icon size={25} color={theme.icon.contrast}/>
         
-                    <span className={`${theme.text.contrast} text-lg text-center`}>{label}</span>
+                    <span className={`${theme.text.contrast} text-base sm:text-lg text-center`}>{label}</span>
         
                 </button>
             );
@@ -32,7 +32,7 @@ export default function Button({variant, Icon, label}: {variant: string | undefi
         
                     <Icon size={25} color={theme.icon.contrast}/>
         
-                    <span className={`${theme.text.contrast} text-lg text-center`}>{label}</span>
+                    <span className={`${theme.text.contrast} text-base sm:text-lg text-center`}>{label}</span>
         
                 </button>
             );

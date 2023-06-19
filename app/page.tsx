@@ -16,7 +16,7 @@ export default function SimpleSlider() {
 
   return (
     <ThemeContext.Provider value={theme}>
-      <div className={`${theme.bg.ground}`}>
+      <div className={`flex flex-col ${theme.bg.ground}`}>
         <LandingSection themeHandler={switchTheme}></LandingSection>
         <ProfileSection></ProfileSection>
         <ProjectsSection></ProjectsSection>

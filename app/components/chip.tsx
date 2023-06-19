@@ -12,7 +12,7 @@ export default function Chip({variant, Icon, label}: {variant: string | undefine
         
                     <Icon size={25} color={theme.icon.main}/>
         
-                    <span className={`${theme.text.main} text-lg text-center`}>{label}</span>
+                    <span className={`${theme.text.main} text-base sm:text-lg text-center`}>{label}</span>
         
                 </div>
             );
@@ -22,7 +22,7 @@ export default function Chip({variant, Icon, label}: {variant: string | undefine
         
                     <Icon size={25} color={theme.icon.main}/>
         
-                    <span className={`${theme.text.main} text-lg text-center`}>{label}</span>
+                    <span className={`${theme.text.main} text-base sm:text-lg text-center`}>{label}</span>
         
                 </div>
             );
@@ -32,7 +32,7 @@ export default function Chip({variant, Icon, label}: {variant: string | undefine
         
                     <Icon size={25} color={theme.icon.main}/>
         
-                    <span className={`${theme.text.main} text-lg text-center`}>{label}</span>
+                    <span className={`${theme.text.main} text-base sm:text-lg text-center`}>{label}</span>
         
                 </div>
             );
