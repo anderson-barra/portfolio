@@ -20,7 +20,7 @@ export function CardActions({children, xPos}: {children: React.ReactNode, xPos: 
     );
 }
 
-export default function Card({children, variant}: {children: React.ReactNode, variant: "raised" | "outlined" | "flat"}) {
+export default function Card({children, variant}: {children: React.ReactNode, variant?: "raised" | "outlined" | "flat"}) {
     const theme = useContext(ThemeContext);
 
     let title;
