@@ -20,7 +20,14 @@ export function CardActions({children, xPos}: {children: React.ReactNode, xPos: 
     );
 }
 
-export default function Card({children, variant}: {children: React.ReactNode, variant?: "raised" | "outlined" | "flat"}) {
+export default function Card(
+    {children, variant, rounded}:
+    {
+        children: React.ReactNode,
+        variant?: "raised" | "outlined" | "flat",
+        rounded?: string,
+    }
+) {
     const theme = useContext(ThemeContext);
 
     let title;
@@ -57,7 +64,16 @@ export default function Card({children, variant}: {children: React.ReactNode, va
     switch (variant) {
         case "raised":
             return(
-                <div className={`p-5 ${theme.bg.figure} shadow-xl rounded-xl flex flex-col gap-4`}>
+                <div
+                    className={`
+                        w-full
+                        h-full
+                        p-5 ${theme.bg.figure} shadow-xl 
+                        ${rounded ? rounded : "rounded-xl" 
+                        }
+                        flex flex-col gap-4
+                    `}
+                >
         
                     {
                         !!title && !subTitle &&
@@ -132,7 +148,17 @@ export default function Card({children, variant}: {children: React.ReactNode, va
             );
         case "outlined":
             return(
-                <div className={`p-5 border-[1px] ${theme.border} rounded-xl flex flex-col gap-4`}>
+                <div
+                    className={`
+                        w-full
+                        h-full
+                        border-[1px]
+                        ${theme.border}
+                        p-5
+                        ${rounded ? rounded : "rounded-xl"}
+                        flex flex-col gap-4
+                    `}
+                >
         
                     {
                         !!title && !subTitle &&
@@ -207,7 +233,15 @@ export default function Card({children, variant}: {children: React.ReactNode, va
             );
         case "flat":
             return(
-                <div className={`p-5 ${theme.bg.figure} rounded-xl flex flex-col gap-4`}>
+                <div
+                    className={`
+                        w-full
+                        h-full
+                        p-5 ${theme.bg.figure} 
+                        ${rounded ? rounded : "rounded-xl"}
+                        flex flex-col gap-4
+                    `}
+                >
         
                     {
                         !!title && !subTitle &&
@@ -282,7 +316,15 @@ export default function Card({children, variant}: {children: React.ReactNode, va
             );
         default:
             return(
-                <div className={`p-5 ${theme.bg.figure} shadow-xl rounded-xl flex flex-col gap-4`}>
+                <div 
+                    className={`
+                        w-full
+                        h-full
+                        p-5 ${theme.bg.figure} shadow-xl 
+                        ${rounded ? rounded : "rounded-xl"}
+                        flex flex-col gap-4
+                    `}
+                >
         
                     {
                         !!title && !subTitle &&

@@ -33,8 +33,8 @@ export const lightTheme: Theme = {
         contrast: "#FFFFFF"
     },
     bg: {
-        ground: "bg-[#EBEBEB]",
-        figure: "bg-[#FFFFFF]",
+        ground: "bg-[#FFFFFF]",
+        figure: "bg-[#EBEBEB]",
         contrast: "bg-[#141414]"
     },
     border: "border-black/50"
@@ -51,8 +51,8 @@ export const darkTheme: Theme = {
         contrast: "#000000"
     },
     bg: {
-        ground: "bg-[#141414]",
-        figure: "bg-[#000000]",
+        ground: "bg-[#000000]",
+        figure: "bg-[#141414]",
         contrast: "bg-[#EBEBEB]"
     },
     border: "border-white/50"
