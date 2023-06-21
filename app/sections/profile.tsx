@@ -4,32 +4,31 @@ import Chip from '../components/chip';
 import Button from '../components/button';
 import { Theme } from "../themes";
 import Image from 'next/image'
+import Card, { CardActions, CardTitle } from '../components/card';
 
 //image
 import profilePhoto from "../../public/images/profile_photo.jpg";
 
 // icons
-import { MdDownload } from "react-icons/md";
-
-import { SiMaterialdesign } from "react-icons/si";
-import { SiTailwindcss } from "react-icons/si";
-import { SiFigma } from "react-icons/si";
-
-import { SiReact } from "react-icons/si";
-import { SiAngular } from "react-icons/si";
-import { SiNextdotjs } from "react-icons/si";
-import { SiFlutter } from "react-icons/si";
-
-import { SiJavascript } from "react-icons/si";
-import { SiTypescript } from "react-icons/si";
-import { SiCsharp } from "react-icons/si";
-import { SiDart } from "react-icons/si";
-
-import { SiSqlite } from "react-icons/si";
-import { SiMongodb } from "react-icons/si";
-
-import { SiGithub } from "react-icons/si";
-import Card, { CardActions, CardTitle } from '../components/card';
+import { MdDownload, MdPlace } from 'react-icons/md';
+import { FaBirthdayCake } from 'react-icons/fa';
+import { GiNothingToSay } from 'react-icons/gi';
+import {
+    SiMaterialdesign,
+    SiTailwindcss,
+    SiFigma,
+    SiReact,
+    SiAngular,
+    SiNextdotjs,
+    SiFlutter,
+    SiJavascript,
+    SiTypescript,
+    SiCsharp,
+    SiDart,
+    SiSqlite,
+    SiMongodb,
+    SiGithub
+} from 'react-icons/si';
 
 export default function ProfileSection() {
     const theme = useContext(ThemeContext);
@@ -39,7 +38,7 @@ export default function ProfileSection() {
 
             <Card variant='flat' rounded={"rounded-t-xl"}>
 
-                <span className={`${theme.text.main} text-2xl sm:text-3xl text-center`}>Perfil</span>
+                <span className={`${theme.text.main} text-2xl sm:text-3xl text-left`}>Perfil</span>
 
             </Card>
 
@@ -47,13 +46,27 @@ export default function ProfileSection() {
 
                 <CardTitle>Sobre Mim</CardTitle>
 
-                <div className='flex flex-col sm:flex-row items-start gap-5'>
+                <div className='flex flex-col items-start gap-5 item'>
 
-                    <Image src={profilePhoto} alt={''} height={150} width={150} className='rounded-full shadow-xl'/>
+                    <div className='w-full flex flex-col sm:flex-row gap-2 items-center sm:items-start'>
 
-                    <div className='flex flex-col gap-2'>
+                        <Image src={profilePhoto} alt={''} width={150} height={150} className='rounded-full shadow-xl'/>
 
-                        <p className={`${theme.text.main} text-lg sm:text-xl text-left font-bold`}>
+                        <div className='flex flex-row flex-wrap sm:flex-col gap-2 justify-center items-start'>
+
+                            <Chip variant='flat' label='05/07/2001' Icon={FaBirthdayCake}/>
+
+                            <Chip variant='flat' label='Belém, PA' Icon={MdPlace}/>
+
+                            <Chip variant='flat' label='Português e Inglês' Icon={GiNothingToSay}/>
+
+                        </div>
+
+                    </div>
+
+                    <div className='w-full flex flex-col gap-2'>
+
+                        <p className={`${theme.text.main} text-lg sm:text-xl text-left font-semibold`}>
                             Anderson Barra Pires Santana
                         </p>
 
@@ -70,13 +83,13 @@ export default function ProfileSection() {
 
                 </div>
 
-                <CardActions xPos='right'>
+                {/* <CardActions xPos='right'>
                     <Button variant='raised' label='Baixe Meu Currículo' Icon={MdDownload}/>
-                </CardActions>
+                </CardActions> */}
 
             </Card>
 
-            <Card variant='outlined' rounded={"rounded-b-xl"}>
+            <Card variant='flat' rounded={"rounded-b-xl"}>
 
                 <CardTitle>Competências</CardTitle>
 

@@ -19,7 +19,7 @@ export default function ProjectsSection() {
 
             <Card variant='flat' rounded={"rounded-t-xl"}>
 
-                <span className={`${theme.text.main} text-2xl sm:text-3xl text-center`}>Projetos</span>
+                <span className={`${theme.text.main} text-2xl sm:text-3xl text-left`}>Projetos</span>
 
             </Card>
 
@@ -41,7 +41,7 @@ export default function ProjectsSection() {
 
                     </div>
 
-                    <p className={`${theme.text.main} text-base sm:text-lg`}>
+                    <p className={`${theme.text.main} text-base sm:text-lg text-justify`}>
                         Gesfér é um site de gestão de férias criado para ser utilizado por servidores da área de administração de órgãos públicos. O objetivo do site é permitir o controle dos períodos de férias dos 
                         servidores de maneira eficiente e organizada. O sistema permite cadastrar usuários com diferentes níveis de acesso, como o Administrador, Cadastrante e Consultor, com permissões específicas para 
                         buscar, listar, remover, criar e editar funcionários e seus períodos de férias.
