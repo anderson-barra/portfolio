@@ -49,7 +49,7 @@ export default function LandingSection({themeHandler}: {themeHandler: Function})
 
                 <div className='grow flex flex-col justify-center items-start'>
 
-                    <span className={`${theme.text.main} text-2xl sm:text-3xl`}>Bem vindo ao portfolio de</span>
+                    <span className={`${theme.text.main} text-2xl sm:text-3xl`}>Bem vindo ao portfólio de</span>
 
                     <span className={`${theme.text.main} text-6xl sm:text-7xl`}>Anderson Barra</span>
 
