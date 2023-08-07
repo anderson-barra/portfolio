@@ -96,7 +96,7 @@ export default function ProfileSection() {
                 <div className='flex flex-col gap-5'>
 
                     <div className='flex flex-row flex-wrap justify-start gap-2'>
-                        <Chip variant='raised' label='Material' Icon={SiMaterialdesign}/>
+                        <Chip variant='raised' label='Material Design' Icon={SiMaterialdesign}/>
                         <Chip variant='raised' label='Tailwind CSS' Icon={SiTailwindcss}/>
                         <Chip variant='raised' label='Figma' Icon={SiFigma}/>
                     </div>
@@ -104,20 +104,12 @@ export default function ProfileSection() {
                     <div className='flex flex-row flex-wrap justify-start gap-2'>
                         <Chip variant='raised' label='React' Icon={SiReact}/>
                         <Chip variant='raised' label='Angular' Icon={SiAngular}/>
-                        <Chip variant='raised' label='Next JS' Icon={SiNextdotjs}/>
-                        <Chip variant='raised' label='Flutter' Icon={SiFlutter}/>
                     </div>
 
                     <div className='flex flex-row flex-wrap justify-start gap-2'>
                         <Chip variant='raised' label='JavaScript' Icon={SiJavascript}/>
                         <Chip variant='raised' label='TypeScipt' Icon={SiTypescript}/>
                         <Chip variant='raised' label='C Sharp' Icon={SiCsharp}/>
-                        <Chip variant='raised' label='Dart' Icon={SiDart}/>
-                    </div>
-
-                    <div className='flex flex-row flex-wrap justify-start gap-2'>
-                        <Chip variant='raised' label='Sqlite' Icon={SiSqlite}/>
-                        <Chip variant='raised' label='MongoDB' Icon={SiMongodb}/>
                     </div>
 
                     <div className='flex flex-row justify-start gap-2'>
