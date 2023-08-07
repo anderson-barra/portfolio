@@ -33,7 +33,7 @@ export default function ProjectsSection() {
 
                     <div className='flex flex-wrap gap-2'>
 
-                        <Chip variant='outlined' Icon={SiMaterialdesign} label='Material'></Chip>
+                        <Chip variant='outlined' Icon={SiMaterialdesign} label='Material Design'></Chip>
 
                         <Chip variant='outlined' Icon={SiAngular} label='Angular'></Chip>
 
@@ -54,7 +54,6 @@ export default function ProjectsSection() {
                         <Button variant='flat' Icon={RiGitRepositoryFill} label='Repositório ↗'></Button>
                     </a>
                 </CardActions>
-
             </Card>
 
         </div>
